@@ -11,11 +11,11 @@ function init() {
 }
 
 function enable() {
-    _originalLastDeviceIsTouchscreen = KeyboardUI.Keyboard.prototype._lastDeviceIsTouchscreen;
-    KeyboardUI.Keyboard.prototype._lastDeviceIsTouchscreen = _modifiedLastDeviceIsTouchscreen;
+    _originalLastDeviceIsTouchscreen = KeyboardUI.KeyboardManager.prototype._lastDeviceIsTouchscreen;
+    KeyboardUI.KeyboardManager.prototype._lastDeviceIsTouchscreen = _modifiedLastDeviceIsTouchscreen;
 }
 
 function disable() {
-    KeyboardUI.Keyboard.prototype._lastDeviceIsTouchscreen = _originalLastDeviceIsTouchscreen;
+    KeyboardUI.KeyboardManager.prototype._lastDeviceIsTouchscreen = _originalLastDeviceIsTouchscreen;
     _originalLastDeviceIsTouchscreen = null;
 }
