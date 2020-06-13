@@ -1,5 +1,7 @@
 # cariboublocker for Gnome Shell 3.36
 
+Based on https://github.com/keringar/cariboublocker.
+
 Change some naming to be compatible with Gnome Shell 3.36.
 
 There are some naming changes in Gnome Shell, so the original project no longer works on some Gnome Shell versions (For me, it works on Fedora 21 with gnome-shell-3.34.5 and Xorg, but not on Fedora 32 with gnome-shell-3.36.3 and Xorg). 
@@ -10,13 +12,17 @@ Only tested on Fedora 32 with gnome-shell-3.36.3 and Xorg.
 
 * Replace `Keyboard` with `KeyboardManager` in `extensions.js`.
 
-## Relevant code
+## Relevant Code
 
 * https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/master/js/ui/keyboard.js
 
-## Development hints
+## Development Hints
 
 [Looking Glass](https://wiki.gnome.org/Projects/GnomeShell/LookingGlass) is very helpful for debugging (saves my time installing an IDE etc).
+
+To create a zip file for https://extensions.gnome.org/upload/, use `zip -j a.zip extension.js metadata.json`
+
+Currently waiting for review: https://extensions.gnome.org/extension/3222/block-caribou-36/
 
 # Original README.md from https://github.com/keringar/cariboublocker
 
