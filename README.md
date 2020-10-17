@@ -1,5 +1,7 @@
 # cariboublocker for Gnome Shell 3.36
 
+Available at: https://extensions.gnome.org/extension/3222/block-caribou-36/
+
 Based on https://github.com/keringar/cariboublocker.
 
 Change some naming to be compatible with Gnome Shell 3.36.
@@ -21,8 +23,6 @@ Only tested on Fedora 32 with gnome-shell-3.36.3 and Xorg.
 [Looking Glass](https://wiki.gnome.org/Projects/GnomeShell/LookingGlass) is very helpful for debugging (saves my time installing an IDE etc).
 
 To create a zip file for https://extensions.gnome.org/upload/, use `zip -j a.zip extension.js metadata.json`
-
-Currently waiting for review: https://extensions.gnome.org/extension/3222/block-caribou-36/
 
 # Original README.md from https://github.com/keringar/cariboublocker
 
