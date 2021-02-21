@@ -6,7 +6,7 @@ Based on https://github.com/keringar/cariboublocker.
 
 Change some naming to be compatible with Gnome Shell 3.36.
 
-There are some naming changes in Gnome Shell, so the original project no longer works on some Gnome Shell versions (For me, it works on Fedora 21 with gnome-shell-3.34.5 and Xorg, but not on Fedora 32 with gnome-shell-3.36.3 and Xorg). 
+There are some naming changes in Gnome Shell, so the original project no longer works on some Gnome Shell versions (For me, it works on Fedora 31 with gnome-shell-3.34.5 and Xorg, but not on Fedora 32 with gnome-shell-3.36.3 and Xorg). 
 
 Only tested on Fedora 32 with gnome-shell-3.36.3 and Xorg.
 
