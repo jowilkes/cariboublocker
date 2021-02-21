@@ -8,7 +8,9 @@ Change some naming to be compatible with Gnome Shell 3.36.
 
 There are some naming changes in Gnome Shell, so the original project no longer works on some Gnome Shell versions (For me, it works on Fedora 31 with gnome-shell-3.34.5 and Xorg, but not on Fedora 32 with gnome-shell-3.36.3 and Xorg). 
 
-Only tested on Fedora 32 with gnome-shell-3.36.3 and Xorg.
+## Test Log
+* 13 Jun 2020: Fedora 32 with gnome-shell-3.36.3 and Xorg
+* 20 Feb 2021: Fedora 33 with gnome-shell-3.38.4 and Xorg
 
 ## Change Log
 
