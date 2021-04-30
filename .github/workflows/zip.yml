@@ -34,13 +34,13 @@ jobs:
       - name: Download 3.36.3
         uses: actions/download-artifact@v2
         with:
-          name: 3.36.3
+          name: 3.36.3.zip
           path: .
 
       - name: Download 40.0
         uses: actions/download-artifact@v2
         with:
-          name: 40.0
+          name: 40.0.zip
           path: .
 
       - name: Bump version and push tag
