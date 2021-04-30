@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: check
-      run: grep -U 99999999 ${{ env.UUID }} ${{ matrix.version }}/metadata.json
+      run: grep -A999 -B999 ${{ env.UUID }} ${{ matrix.version }}/metadata.json
     - name: zip
       run: zip -j ${{ matrix.version }}.zip ${{ matrix.version }}/*
     - name: upload
@@ -24,4 +24,15 @@ jobs:
       with:
         name: ${{ matrix.version }}.zip
         path: ${{ matrix.version }}.zip
+    - name: release
+      if: ${{ (startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/master' && github.event_name == 'push') }}
+      id: release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./${{ matrix.version }}.zip
+        asset_name: ${{ matrix.version }}.zip
+        asset_content_type: application/zip
 
