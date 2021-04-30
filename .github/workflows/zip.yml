@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: check
-      run: grep -U 99999999 ${{ env.UUID }} ${{ matrix.version }}/metadata.json
+      run: grep -A999 -B999 ${{ env.UUID }} ${{ matrix.version }}/metadata.json
     - name: zip
       run: zip -j ${{ matrix.version }}.zip ${{ matrix.version }}/*
     - name: upload
