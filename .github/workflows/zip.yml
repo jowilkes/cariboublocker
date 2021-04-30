@@ -76,7 +76,7 @@ jobs:
           prerelease: false
 
       - name: Release 3.36.6
-        id: release-3.36.3
+        id: release-3-36-3
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -87,7 +87,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Release 40.0
-        id: release-40.0
+        id: release-40-0
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
