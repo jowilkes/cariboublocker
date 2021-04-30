@@ -8,12 +8,23 @@ Change some naming to be compatible with Gnome Shell 3.36.
 
 There are some naming changes in Gnome Shell, so the original project no longer works on some Gnome Shell versions (For me, it works on Fedora 31 with gnome-shell-3.34.5 and Xorg, but not on Fedora 32 with gnome-shell-3.36.3 and Xorg). 
 
+## Install
+
+### Way 1: use extensions.gnome.org
+This extension is available at the official GNOME Shell Extensions website:
+<https://extensions.gnome.org/extension/3222/block-caribou-36/>
+
+### Way 2: download zip
+Go to [Releases](https://github.com/lxylxy123456/cariboublocker/releases), and
+choose the zip file corresponding to your gnome-shell version. Then
+`gnome-extensions install <your-gnome-shell-version>.zip`.
+
 ## Test Log
 * 13 Jun 2020: [3.36.3](3.36.3/) **PASS** on
   Fedora 32 with gnome-shell-3.36.3 and Xorg
 * 20 Feb 2021: [3.36.3](3.36.3/) **PASS** on
   Fedora 33 with gnome-shell-3.38.4 and Xorg
-* 29 Apr 2021: [40.0](40.0/) ???? on
+* 29 Apr 2021: [40.0](40.0/) **PASS** on
   Fedora 34 with gnome-shell-40.0 and Xorg
 
 ## Change Log
@@ -22,7 +33,8 @@ There are some naming changes in Gnome Shell, so the original project no longer 
 * Replace `Keyboard` with `KeyboardManager` in `extensions.js`.
 
 ### [40.0](40.0/)
-* Coming soon
+* Simply change `"shell-version"` in `metadata.json` to `40.0`. For some reason
+  the version string `"3.36.3"` still works on Fedora 33's gnome-shell-3.38.
 
 ## Relevant Code
 
