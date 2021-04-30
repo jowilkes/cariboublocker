@@ -1,0 +1,27 @@
+name: Create zip files
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      UUID: 'block-caribou-36@lxylxy123456.ercli.dev'
+    strategy:
+      matrix:
+        version:
+          - '3.36.3'
+          - '40.0'
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: check
+      run: grep -U 99999999 ${{ env.UUID }} ${{ matrix.version }}/metadata.json
+    - name: zip
+      run: zip -j ${{ matrix.version }}.zip ${{ matrix.version }}/*
+    - name: upload
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ matrix.version }}.zip
+        path: ${{ matrix.version }}.zip
+

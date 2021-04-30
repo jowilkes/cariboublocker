@@ -9,12 +9,20 @@ Change some naming to be compatible with Gnome Shell 3.36.
 There are some naming changes in Gnome Shell, so the original project no longer works on some Gnome Shell versions (For me, it works on Fedora 31 with gnome-shell-3.34.5 and Xorg, but not on Fedora 32 with gnome-shell-3.36.3 and Xorg). 
 
 ## Test Log
-* 13 Jun 2020: Fedora 32 with gnome-shell-3.36.3 and Xorg
-* 20 Feb 2021: Fedora 33 with gnome-shell-3.38.4 and Xorg
+* 13 Jun 2020: [3.36.3](3.36.3/) **PASS** on
+  Fedora 32 with gnome-shell-3.36.3 and Xorg
+* 20 Feb 2021: [3.36.3](3.36.3/) **PASS** on
+  Fedora 33 with gnome-shell-3.38.4 and Xorg
+* 29 Apr 2021: [40.0](40.0/) ???? on
+  Fedora 34 with gnome-shell-40.0 and Xorg
 
 ## Change Log
 
+### [3.36.3](3.36.3/)
 * Replace `Keyboard` with `KeyboardManager` in `extensions.js`.
+
+### [40.0](40.0/)
+* Coming soon
 
 ## Relevant Code
 
