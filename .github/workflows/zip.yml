@@ -24,4 +24,14 @@ jobs:
       with:
         name: ${{ matrix.version }}.zip
         path: ${{ matrix.version }}.zip
+    - name: release
+      id: release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./${{ matrix.version }}.zip
+        asset_name: ${{ matrix.version }}.zip
+        asset_content_type: application/zip
 
