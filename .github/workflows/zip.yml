@@ -12,6 +12,7 @@ jobs:
         version:
           - '3.36.3'
           - '40.0'
+          - '40'
 
     steps:
     - uses: actions/checkout@v2
