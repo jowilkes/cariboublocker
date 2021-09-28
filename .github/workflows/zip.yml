@@ -13,6 +13,7 @@ jobs:
           - '3.36.3'
           - '40.0'
           - '40'
+          - '41'
 
     steps:
     - uses: actions/checkout@v2
@@ -49,6 +50,12 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: 40.zip
+          path: .
+
+      - name: Download 41
+        uses: actions/download-artifact@v2
+        with:
+          name: 41.zip
           path: .
 
       - name: Bump version and push tag
@@ -99,5 +106,15 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./40.zip
           asset_name: 40.zip
+          asset_content_type: application/zip
+
+      - name: Release 41
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./41.zip
+          asset_name: 41.zip
           asset_content_type: application/zip
 
