@@ -46,6 +46,8 @@ There are a few possible solutions:
   Fedora 34 with gnome-shell-40.0 and Xorg
 * 5 Dec 2021: [41](41/) **PASS** on
   Fedora 35 with gnome-shell-41.1 and Xorg
+* 12 Jun 2022: [42](42/) **PASS** on
+  Fedora 36 with gnome-shell-42.2 and Xorg
 
 ## Change Log
 
