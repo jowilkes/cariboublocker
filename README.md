@@ -6,7 +6,7 @@ Based on https://github.com/keringar/cariboublocker.
 
 Change some naming to be compatible with GNOME Shell 3.36.
 
-There are some naming changes in GNOME Shell, so the original project no longer works on some GNOME Shell versions (For me, it works on Fedora 31 with gnome-shell-3.34.5 and Xorg, but not on Fedora 32 with gnome-shell-3.36.3 and Xorg). 
+There are some naming changes in GNOME Shell, so the original project by keringar no longer works on some GNOME Shell versions (For me, it works on Fedora 31 with gnome-shell-3.34.5 and Xorg, but not on Fedora 32 with gnome-shell-3.36.3 and Xorg).
 
 ## Install
 
@@ -65,11 +65,53 @@ There are a few possible solutions:
 * Update `shell-version` in `metadata.json`
 
 ### [42](42/)
-* Update `shell-version` and description to be more comprehensive (not released yet)
+* Update `shell-version` and description to be more comprehensive
 
 ## Relevant Code
 
-* https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/master/js/ui/keyboard.js
+See `js/ui/keyboard.js`. Here are links for some versions after 3.36:
+
+* <https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/ui/keyboard.js>
+* <https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-42/js/ui/keyboard.js#L1174>
+  <!-- 8dc0ca5eebdeda668418f02cd544b19589872fc6 -->
+* <https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-41/js/ui/keyboard.js#L1164>
+  <!-- 040a5d34d7a5601ad2a2f622fd9a393c5e08be5f -->
+* <https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-40/js/ui/keyboard.js#L1167>
+  <!-- 821ff3bb887cfbbc080dc737b6084282213d0e7b -->
+* <https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-3-38/js/ui/keyboard.js#L1129>
+  <!-- cf9d73ed5d316093ad7284ce5df95bce51409f28 -->
+* <https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-3-36/js/ui/keyboard.js#L1130>
+  <!-- 40a003e5acaddb74ddd3f02294b0b4bc01ac1d3f -->
+
+The structure of code is:
+```js
+var KeyboardManager = class KeyBoardManager {
+    constructor() {
+        ...
+    }
+
+    _lastDeviceIsTouchscreen() {
+
+        if (!this._lastDevice)
+            return false;
+
+        let deviceType = this._lastDevice.get_device_type();
+        return deviceType == Clutter.InputDeviceType.TOUCHSCREEN_DEVICE;
+    }
+
+    ...
+}
+```
+
+This extension simply replaces `_lastDeviceIsTouchscreen` with a function that
+always returns false.
+
+In GNOME Shell 3.34 and earlier, the class was named `Keyboard` instead of
+`KeyboardManager`. So keringar's extension no longer works after GNOME Shell
+3.36.
+
+* <https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/gnome-3-34/js/ui/keyboard.js#L1052>
+  <!-- 3d7ee7856f1c3231925cce770d1fe0b3b3bb932d -->
 
 ## Development Hints
 
